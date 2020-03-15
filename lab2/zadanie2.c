@@ -64,27 +64,6 @@ void vector_matrix(int size)
     int i = 0;
     double number;
     gsl_blas_dgemv(CblasNoTrans, 1.0, matrix, vector_a, 0.0, vector_b);
-    /*
-    lotkin_a = gsl_matrix_alloc(DIM, DIM);
-    frank_a = gsl_matrix_alloc(DIM, DIM);
-    x = gsl_vector_alloc(DIM);
-    lotkin_b = gsl_vector_alloc(DIM);
- 
-    /* set x = [1 2 ... DIM] 
-    for(i = 0; i < DIM; i++)
-        gsl_vector_set(x, i, (double)i);
- 
-    /* set Lotkin matrix              
-    /* a_ij = 1 (i = 1) or 1/(i+j-1) (i != 1) 
-    for(i = 0; i < DIM; i++)
-        gsl_matrix_set(lotkin_a, 0, i, 1.0);
-    for(i = 1; i < DIM; i++)
-        for(j = 0; j < DIM; j++)
-            gsl_matrix_set(lotkin_a, i, j, 1.0 / (double)(i + j + 1));
- 
- 
-    /* b = A * x 
-    gsl_blas_dgemv(CblasNoTrans, 1.0, lotkin_a, x, 0.0, lotkin_b);*/
 }
 int main(void)
 {
@@ -96,7 +75,7 @@ int main(void)
         tms[i] = calloc(1, sizeof(struct tms *));
     }
     int current = 0; 
-    /*
+    
     for(int i = 5000000; i<10000000; i=i+1000000)
     {
       for(int j = 0; j<10; j++)
@@ -108,7 +87,7 @@ int main(void)
         current = current+2;        
       }
     }
-    */
+    
       for(int i = 1000; i<6000; i=i+1000)
       {
           for(int j = 0; j<10; j++)
